@@ -110,7 +110,7 @@ def create_embeddings(model, tokenizer, data, num_splits = 10, batch_size = 128,
 
             for j in range(0, len(split_input_ids[i]), batch_size):
 
-                batch_input_ids = split_input_idsf[i][j:j+batch_size]
+                batch_input_ids = split_input_ids[i][j:j+batch_size]
                 batch_attention_mask = split_attention_mask[i][j:j+batch_size]
 
                 with torch.no_grad():
