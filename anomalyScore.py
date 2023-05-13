@@ -110,7 +110,7 @@ def create_embeddings(model, tokenizer, data, num_splits = 10, batch_size = 128,
 
             for j in range(0, len(split_input_ids[i]), batch_size):
 
-                batch_input_ids = split_input_ids_train[i][j:j+batch_size]
+                batch_input_ids = split_input_idsf[i][j:j+batch_size]
                 batch_attention_mask = split_attention_mask[i][j:j+batch_size]
 
                 with torch.no_grad():
@@ -143,8 +143,8 @@ def create_embeddings(model, tokenizer, data, num_splits = 10, batch_size = 128,
 
 def anomalyScore(train_file, test_file, folderpath):
     if train_file is not None or test_file is not None or folderpath is not None:
-        train_file = os.path.join(folderpath, "combined_train.npy")
-        test_file = os.path.join(folderpath, "combined_test.npy")
+        train_file = os.path.join(folderpath, train_file)
+        test_file = os.path.join(folderpath, test_file)
         test_embeddings = np.load(test_file)
         train_embeddings = np.load(train_file)
 
