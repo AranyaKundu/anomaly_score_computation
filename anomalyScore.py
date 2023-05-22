@@ -149,9 +149,9 @@ def anomalyScore(train_file, test_file, folderpath):
         train_embeddings = np.load(train_file)
 
     else: raise ValueError("At least one or more inputs are missing!")
-
+    
+    anomaly_scores = []
     for i in tqdm(range(len(test_embeddings))):
-        anomaly_scores = []
         similarities = cosine_similarity([test_embeddings[i]], train_embeddings)[0]
         anomaly_score = 1 - similarities.max()
         anomaly_scores.append(anomaly_score)
