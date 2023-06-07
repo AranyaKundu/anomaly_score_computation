@@ -6,7 +6,7 @@ We can compute an Anomaly Score within a text data based on cosine similarity. I
 $$ CosineSimilarity = \frac {(A.B)} {(||A||.||B||)} $$
 
 <br>
-where $$A$$ and $$B$$ are vectors:
+where $$ A $$ and $$ B $$ are vectors:
 
 It is better than using Euclidean distance.
 
